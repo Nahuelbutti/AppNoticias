@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'app.juego.newsapp'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "app.juego.newsapp"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 

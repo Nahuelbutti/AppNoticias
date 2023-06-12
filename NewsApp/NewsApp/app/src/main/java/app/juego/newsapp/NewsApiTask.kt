@@ -9,10 +9,9 @@ import java.io.BufferedWriter
 import java.io.FileWriter
 import java.io.IOException
 
-class NewsApiTask(private val outputPath: String, private val listener: NewsApiListener) :
-    AsyncTask<Void, Void, String>() {
+class NewsApiTask(private val listener: NewsApiListener) : AsyncTask<Void, Void, String>() {
 
-    private val apiKey = "3c4217eff7de46f7a6afaededb1ab2ca" // Reemplaza con tu clave de API de NewsAPI
+    private val apiKey = "3c4217eff7de46f7a6afaededb1ab2ca" // Reemplaza con mi clave de API de NewsAPI
 
     interface NewsApiListener {
         fun onNewsApiResult(result: String)
@@ -37,7 +36,7 @@ class NewsApiTask(private val outputPath: String, private val listener: NewsApiL
             val xmlData = generateXML(articles)
 
             try {
-                val fileWriter = FileWriter(outputPath)
+                val fileWriter = FileWriter("news.xml")
                 val bufferedWriter = BufferedWriter(fileWriter)
                 bufferedWriter.write(xmlData)
                 bufferedWriter.close()

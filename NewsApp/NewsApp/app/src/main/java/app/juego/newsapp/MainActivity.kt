@@ -60,8 +60,8 @@ class MainActivity : AppCompatActivity(), NewsApiTask.NewsApiListener {
         val storageDir = getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
         val outputFile = File(storageDir, "news.xml")
 
-        val newsApiTask = NewsApiTask(outputFile.absolutePath, this)
-        newsApiTask.execute()
+        val newsApiTask = NewsApiTask(this)
+        newsApiTask.execute(outputFile.absolutePath)
     }
 }
 
